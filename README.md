@@ -1,3 +1,10 @@
+## Zero To Mastery - Udemy - React Tutorial
+
+This project is based on the React tutorial offered by Zero To Mastery on Udemy
+https://www.udemy.com/share/101WH43@btmHR7OlHH0Qz82-uIxzK6Et_5b18Pku4KkQhdUr9rYPKMW07NJOT3C02F8YPVlkMQ==/
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
