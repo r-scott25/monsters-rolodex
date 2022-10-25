@@ -1,7 +1,7 @@
 import { Component } from "react";
 
-import CardList from './components/card-list/card-list.component';
-import SearchBox from './components/search-box/search-box.component';
+import CardList from "./components/card-list/card-list.component";
+import SearchBox from "./components/search-box/search-box.component";
 import "./App.css";
 
 class App extends Component {
@@ -10,7 +10,7 @@ class App extends Component {
 
     this.state = {
       monsters: [],
-      searchField: ''
+      searchField: "",
     };
   }
 
@@ -18,25 +18,21 @@ class App extends Component {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
       .then((users) =>
-        this.setState(
-          () => {
-            return { monsters: users };
-          }
-        )
+        this.setState(() => {
+          return { monsters: users };
+        })
       );
   }
 
-
-onSearchChange = (event) => {
-  const searchField = event.target.value.toLocaleLowerCase();
-  this.setState(() => {
-    return { searchField };
-  });
-}
+  onSearchChange = (event) => {
+    const searchField = event.target.value.toLocaleLowerCase();
+    this.setState(() => {
+      return { searchField };
+    });
+  };
 
   render() {
-
-    const { monsters, searchField} = this.state;
+    const { monsters, searchField } = this.state;
     const { onSearchChange } = this;
     const filteredMonsters = monsters.filter((monster) => {
       return monster.name.toLocaleLowerCase().includes(searchField);
@@ -45,11 +41,11 @@ onSearchChange = (event) => {
     return (
       <div className="App">
         <SearchBox
-          className='search-box'
-          onChangeHandler={onSearchChange} 
-          placeholder='search monsters'
-          />
-        <CardList monsters={filteredMonsters}/>
+          className="monsters-search-box"
+          onChangeHandler={onSearchChange}
+          placeholder="search monsters"
+        />
+        <CardList monsters={filteredMonsters} />
       </div>
     );
   }
